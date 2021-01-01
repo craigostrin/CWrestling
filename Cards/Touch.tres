@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource( 1 )
 name = "Touch"
-deck_count = 0
+deck_count = 4
 combo_card = "Touch"
 good_combo = true
 combo_flavor_text = "Mutual Caress"

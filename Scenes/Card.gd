@@ -10,22 +10,48 @@ extends Control
 
 onready var nameLabel = $Panel/VBoxContainer/Header/HBoxContainer/NameLabel
 onready var effectsContainer = $Panel/VBoxContainer/Header/HBoxContainer/EffectsContainer
-#onready var effect1Label = $Panel/VBoxContainer/Header/HBoxContainer/Effects/Effect1Label
-#onready var effect2Label = $Panel/VBoxContainer/Header/HBoxContainer/Effects/Effect2Label
 #onready var artRect = $Panel/VBoxContainer/TextureRect
 onready var comboHeader = $Panel/VBoxContainer/Footer/ComboHeader
 onready var comboLabel = $Panel/VBoxContainer/Footer/VBoxContainer/ComboLabel
 onready var comboEffectsContainer = $Panel/VBoxContainer/Footer/VBoxContainer/ComboEffectsContainer
-#onready var comboEffect1Label = $Panel/VBoxContainer/Footer/VBoxContainer/ComboEffects/ComboEffect1Label
-#onready var comboEffect2Label = $Panel/VBoxContainer/Footer/VBoxContainer/ComboEffects/ComboEffect2Label
-
 
 var card_data: CardData
 
+enum {
+	IN_HAND,
+	IN_PLAY,
+	FOCUS_IN_HAND,
+	MOVE_CARD_TO_PLAY,
+}
 
-func set_card_data(cd: CardData):
-	card_data = cd
+var state = IN_HAND
+
+var start_pos = 0
+var target_pos = 0
+var time = 0
+
+
+func _ready():
 	update_display()
+
+
+func _physics_process(delta):
+	match state:
+		IN_HAND:
+			pass
+		IN_PLAY:
+			pass
+		FOCUS_IN_HAND:
+			pass
+		MOVE_CARD_TO_PLAY:
+			# can you just do linear_interpolate(t_p, delta)?
+			if time <= 1:
+				rect_position = start_pos.linear_interpolate(target_pos, time)
+				time += delta
+			else:
+				rect_position = target_pos
+				state = IN_PLAY
+				time = 0
 
 
 func update_display():
@@ -37,11 +63,11 @@ func update_display():
 
 
 func set_card_name():
-	nameLabel.text = card_data.get_name()
+	nameLabel.text = card_data.name
 
 
 func set_effects():
-	var fx = card_data.get_effects()
+	var fx = card_data.effects
 	create_effect_labels(fx, effectsContainer)
 
 
@@ -54,12 +80,12 @@ func set_combo_header():
 
 func set_combo_label():
 	var _name = card_data.name
-	var _combo_card = card_data.get_combo_card()
+	var _combo_card = card_data.combo_card
 	comboLabel.text = _name + ' + ' + _combo_card
 
 
 func set_combo_effects():
-	var fx = card_data.get_combo_effects()
+	var fx = card_data.combo_effects
 	create_effect_labels(fx, comboEffectsContainer)
 
 

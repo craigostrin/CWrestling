@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/PlayerHand.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Deck.gd" type="Script" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Cards/Restrain.tres" type="Resource" id=12]
 [ext_resource path="res://Cards/Kiss.tres" type="Resource" id=13]
 [ext_resource path="res://Scenes/Combat.gd" type="Script" id=14]
+[ext_resource path="res://Images/rectangle-wrestling-ring_cropped.png" type="Texture" id=15]
+[ext_resource path="res://Images/crowd.jpg" type="Texture" id=16]
 
 [node name="Combat" type="Node2D"]
 script = ExtResource( 14 )
@@ -27,18 +29,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/CombatGUI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = 437.0
+margin_right = 52.0
+margin_bottom = 59.0
+color = Color( 0, 0, 0.141176, 0.882353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PlayerHand" parent="CanvasLayer/CombatGUI" instance=ExtResource( 1 )]
+margin_left = 147.674
+margin_top = 450.912
+margin_right = -252.326
+margin_bottom = 0.911682
 
 [node name="Deck" type="Control" parent="CanvasLayer/CombatGUI"]
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-margin_left = -164.061
-margin_top = 46.7194
-margin_right = -54.061
-margin_bottom = 223.719
+anchor_bottom = 1.0
+margin_left = -192.0
+margin_top = -251.0
+margin_right = -34.0
+margin_bottom = -23.0
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 card_base = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ) ]
@@ -53,10 +72,81 @@ __meta__ = {
 [node name="Label" type="Label" parent="CanvasLayer/CombatGUI/Deck/Panel"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -20.0
-margin_top = 40.0
-margin_right = 20.0
-margin_bottom = 52.0429
+margin_left = -43.5
+margin_top = 52.0
+margin_right = 43.5
+margin_bottom = 83.0
 text = "DECK:
 X cards"
 align = 1
+
+[node name="RingBackground" type="TextureRect" parent="CanvasLayer/CombatGUI"]
+anchor_left = 0.5
+anchor_top = 0.378
+anchor_right = 0.5
+anchor_bottom = 0.378
+margin_left = -340.0
+margin_top = -158.16
+margin_right = 252.0
+margin_bottom = 159.84
+texture = ExtResource( 15 )
+stretch_mode = 6
+
+[node name="CenterPools" type="Control" parent="CanvasLayer/CombatGUI"]
+anchor_left = 0.468
+anchor_top = 0.347
+anchor_right = 0.468
+anchor_bottom = 0.347
+margin_left = -187.04
+margin_top = -41.84
+margin_right = 185.96
+margin_bottom = 51.16
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/CombatGUI/CenterPools"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.443137 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TrustPoolLabel" type="Label" parent="CanvasLayer/CombatGUI/CenterPools/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -152.039
+margin_top = -13.5373
+margin_right = -68.039
+margin_bottom = 17.4627
+text = "Trust Pooled:
+33"
+align = 1
+
+[node name="SatisfactionLabel" type="Label" parent="CanvasLayer/CombatGUI/CenterPools/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 63.7173
+margin_top = -30.4926
+margin_right = 147.717
+margin_bottom = 17.5074
+text = "Satisfaction
+Converted:
+33"
+align = 1
+
+[node name="PlayerCardPos" type="Position2D" parent="CanvasLayer/CombatGUI"]
+position = Vector2( 140, 132 )
+
+[node name="OppCardPos" type="Position2D" parent="CanvasLayer/CombatGUI"]
+position = Vector2( 905, 132 )
+
+[node name="crowd" type="Sprite" parent="."]
+position = Vector2( 707.942, 353.665 )
+scale = Vector2( 1.50191, 1.50191 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
