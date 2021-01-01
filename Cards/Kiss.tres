@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Cards/CardData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Kiss"
+deck_count = 3
+combo_card = "Kiss"
+good_combo = false
+combo_flavor_text = "Fumblemouths"
+phase_played = 2
+effects = {
+"Convert": null,
+"Gain": null,
+"Give": null,
+"Pool": 4,
+"Satisfy": null
+}
+combo_effects = {
+"Convert": null,
+"Gain": 1,
+"Give": null,
+"Pool": 2,
+"Satisfy": null
+}

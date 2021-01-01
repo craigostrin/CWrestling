@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Cards/CardData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Gaze"
+deck_count = 3
+combo_card = "Gaze"
+good_combo = true
+combo_flavor_text = "Meaningful Stare"
+phase_played = 1
+effects = {
+"Convert": null,
+"Gain": 1,
+"Give": null,
+"Pool": null,
+"Satisfy": null
+}
+combo_effects = {
+"Convert": null,
+"Gain": 2,
+"Give": null,
+"Pool": 2,
+"Satisfy": null
+}

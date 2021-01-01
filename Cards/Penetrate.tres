@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Cards/CardData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Penetrate"
+deck_count = 1
+combo_card = "Envelop"
+good_combo = true
+combo_flavor_text = "From the Inside"
+phase_played = 3
+effects = {
+"Convert": 2,
+"Gain": null,
+"Give": null,
+"Pool": null,
+"Satisfy": null
+}
+combo_effects = {
+"Convert": 4,
+"Gain": null,
+"Give": null,
+"Pool": null,
+"Satisfy": null
+}

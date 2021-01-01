@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Cards/CardData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Touch"
+deck_count = 0
+combo_card = "Touch"
+good_combo = true
+combo_flavor_text = "Mutual Caress"
+phase_played = 2
+effects = {
+"Convert": null,
+"Gain": null,
+"Give": null,
+"Pool": 3,
+"Satisfy": null
+}
+combo_effects = {
+"Convert": null,
+"Gain": 2,
+"Give": null,
+"Pool": 4,
+"Satisfy": null
+}

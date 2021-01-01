@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Cards/CardData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Release"
+deck_count = 2
+combo_card = "Release"
+good_combo = true
+combo_flavor_text = "Synchronicity"
+phase_played = 4
+effects = {
+"Convert": null,
+"Gain": null,
+"Give": null,
+"Pool": null,
+"Satisfy": 3
+}
+combo_effects = {
+"Convert": null,
+"Gain": null,
+"Give": null,
+"Pool": null,
+"Satisfy": -1
+}

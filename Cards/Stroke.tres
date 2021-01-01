@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Cards/CardData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Stroke"
+deck_count = 1
+combo_card = "Stroke"
+good_combo = false
+combo_flavor_text = "All Twisted"
+phase_played = 0
+effects = {
+"Convert": null,
+"Gain": null,
+"Give": 8,
+"Pool": null,
+"Satisfy": null
+}
+combo_effects = {
+"Convert": null,
+"Gain": 4,
+"Give": null,
+"Pool": 3,
+"Satisfy": null
+}

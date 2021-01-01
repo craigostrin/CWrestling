@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Cards/CardData.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "Restrain"
+deck_count = 1
+combo_card = "Restrain"
+good_combo = false
+combo_flavor_text = "Tangled Up"
+phase_played = 3
+effects = {
+"Convert": 3,
+"Gain": null,
+"Give": null,
+"Pool": null,
+"Satisfy": null
+}
+combo_effects = {
+"Convert": 0,
+"Gain": null,
+"Give": null,
+"Pool": 1,
+"Satisfy": null
+}
